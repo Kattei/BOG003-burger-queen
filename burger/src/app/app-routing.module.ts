@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeChefComponent } from './componentes/home-chef/home-chef.component';
 import { HomeMeserosComponent } from './componentes/home-meseros/home-meseros.component';
 import { LoginUserComponent } from './componentes/login-user/login-user.component';
-import { PruebaComponent } from './componentes/prueba/prueba/prueba.component';
+//import { PruebaComponent } from './componentes/prueba/prueba/prueba.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { StatusPedidosComponent } from './componentes/status-pedidos/status-pedidos.component';
 
