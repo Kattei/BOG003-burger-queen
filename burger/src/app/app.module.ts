@@ -10,6 +10,7 @@ import { HomeMeserosComponent } from './componentes/home-meseros/home-meseros.co
 import { HomeChefComponent } from './componentes/home-chef/home-chef.component';
 import { StatusPedidosComponent } from './componentes/status-pedidos/status-pedidos.component';
 import { LoginUserComponent } from './componentes/login-user/login-user.component';
+import { MenuDesayunoComponent } from './componentes/home-meseros/subcomponentes-mesero/menu-desayuno/menu-desayuno.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoginUserComponent } from './componentes/login-user/login-user.componen
     HomeMeserosComponent,
     HomeChefComponent,
     StatusPedidosComponent,
-    LoginUserComponent
+    LoginUserComponent,
+    MenuDesayunoComponent
   ],
   imports: [
     BrowserModule,

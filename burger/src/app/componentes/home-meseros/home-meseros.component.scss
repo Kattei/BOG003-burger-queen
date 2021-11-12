@@ -3,7 +3,7 @@
     width: 20%;
   }
   
-  nav a {
+  nav button {
     padding: 1rem;
     text-decoration: none;
     margin-top: 10px;
@@ -12,7 +12,7 @@
     //color: #f5f254;
     border-radius: 4px;
   }
-  nav a:hover {
+  nav button:hover {
     color: #000;
     background-color: #FFF463;
     //border: #B36E29;
@@ -21,7 +21,7 @@
         border-style: solid;
         
   }
-  nav a.active {
-    background-color: #FFF463;
+  /* nav button.active {
+    background-color: #63ffd0;
     //border: #B36E29;
-  }
+  } */

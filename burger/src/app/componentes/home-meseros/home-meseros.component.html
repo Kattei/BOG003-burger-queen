@@ -1,13 +1,37 @@
 
 <section>
+  <header>
+
     <img class="img-logo" src="./assets\LOGOBURGER.png"/> 
+
+    <div>
     <img src="./assets\mesero.png"/> 
-    <img src="./assets\campana.png"/> 
-    
- 
+    <p>Mesero</p>
+    </div>
+    <nav>
+      <div>
+      <img src="./assets\campana.png"/> 
+      <p>ver mesas</p>
+      </div>
+
+      <img src="./assets/boton_atras.png" alt="boton atras"/>
+    </nav>
+  </header>
+
   <nav>
-    <a>Desayuno</a>
-    <a>Almuerzo y Cena</a>
+    <hr>
+    <label for="nombreCliente"> Nombre del cliente  </label>
+    <input type="text" id="nombreCliente">
+
+    <label for="numeroMesa"> <img src="\assets\mesa.png"/></label>
+    <input type="text" id="numeroMesa">
+
+    <hr>
+    <button (click)="getMenuDesayuno()" id="Desayuno">Desayuno</button>
+    <!-- //<p>{{mensaje}}</p> -->
+    <button (click)= " getMenuDesayuno()"id = "almuerzoCena">Almuerzo y Cena</button>
+    <app-menu-desayuno *ngIf="showBreakfast"></app-menu-desayuno>
+    <app-home-chef *ngIf="!showBreakfast"></app-home-chef>
   </nav>
 </section> 
   <router-outlet></router-outlet>

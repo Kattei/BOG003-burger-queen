@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-meseros.component.scss']
 })
 export class HomeMeserosComponent implements OnInit {
+  showBreakfast:boolean =false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+  getMenuDesayuno():void{
+
+    const mensaje="holi que se dice";
+    this.showBreakfast =!this.showBreakfast;
   }
 
 }
