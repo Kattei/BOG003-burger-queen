@@ -1,4 +1,8 @@
 
+  .img-logo {
+    width: 20%;
+  }
+  
   nav a {
     padding: 1rem;
     text-decoration: none;
@@ -15,12 +19,7 @@
     border-color: #B36E29;
         border-width: 3px;
         border-style: solid;
-    // .bordesolido{
-    //     border-color: #aaaaaa;
-    //     border-width: 1px;
-    //     border-style: solid;
-    //  }
-     
+        
   }
   nav a.active {
     background-color: #FFF463;
