@@ -1,0 +1,25 @@
+
+{
+    "desayuno":[
+        {"item":"café americano",
+         "precio":5,
+         "cantidad":""
+        },
+        {"item":"café con leche",
+         "precio":7,
+         "cantidad":""
+        },
+        {
+        "item":"Sandwich de jamón y ques0", 
+        "precio":10,
+        "cantidad":""   
+        },
+        {
+        "item":"Jugo de frutas natural ",
+        "precio":7,
+        "cantidad":""
+        }
+    ]
+
+    
+}

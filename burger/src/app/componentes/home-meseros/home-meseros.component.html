@@ -27,9 +27,9 @@
     <input type="text" id="numeroMesa">
 
     <hr>
-    <button (click)="getMenuDesayuno()" id="Desayuno">Desayuno</button>
-    <!-- //<p>{{mensaje}}</p> -->
-    <button (click)= " getMenuDesayuno()"id = "almuerzoCena">Almuerzo y Cena</button>
+    <button (click)="getMenuDesayuno() " id="Desayuno">Desayuno</button>
+    
+    <button (click)= " getMenuDesayuno() "id = "almuerzoCena">Almuerzo y Cena</button>
     <app-menu-desayuno *ngIf="showBreakfast"></app-menu-desayuno>
     <app-home-chef *ngIf="!showBreakfast"></app-home-chef>
   </nav>
