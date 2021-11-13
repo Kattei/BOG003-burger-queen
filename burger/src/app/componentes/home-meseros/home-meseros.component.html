@@ -31,7 +31,7 @@
     
     <button (click)= " getMenuDesayuno() "id = "almuerzoCena">Almuerzo y Cena</button>
     <app-menu-desayuno *ngIf="showBreakfast"></app-menu-desayuno>
-    <app-home-chef *ngIf="!showBreakfast"></app-home-chef>
+    <app-menu-almuerzo-cena *ngIf="!showBreakfast"></app-menu-almuerzo-cena>
   </nav>
 </section> 
   <router-outlet></router-outlet>

@@ -19,7 +19,71 @@
         "precio":7,
         "cantidad":""
         }
+    ],
+    "almuerzo":[
+        {"Hamburguesa":[
+            {
+            "item":"Hamburguesa simple",
+            "precio":10,
+            "cantidad":""
+            },
+            {"item":"Hamburguesa doble",
+                "precio":15,
+                "cantidad":""
+               }
+        ]},
+        {"acompañamineto":[
+            {
+            "item":"Papas fritas", 
+            "precio":5,
+            "cantidad":""   
+            },
+            {
+            "item":"Aros de cebolla ",
+            "precio":5,
+            "cantidad":""
+            }
+        ]},
+        {"bebida/gaseosa":[
+            {"item":"Agua 500ml",
+            "precio":5,
+            "cantidad":""
+            },
+            {"item":"Agua 750ml",
+            "precio":7,
+            "cantidad":""
+            },
+            {
+            "item":"bebida/gaseosa 500ml", 
+            "precio":7,
+            "cantidad":""   
+            },
+            {
+            "item":"bebida/gaseosa",
+            "precio":10,
+            "cantidad":""
+            }
+        ]},
+        {"tipo de carne":[
+            {"item":"res"
+            },
+            {"item":"pollo"
+            },
+            {
+            "item":"vegetariana" 
+            } 
+        ]},
+        {"adicional":[
+            {"item":"Huevo", 
+            "precio":1,
+            "cantidad":""   
+            },
+            {
+            "item":"Queso ",
+            "precio":1,
+            "cantidad":""
+            }        
+        ]}
     ]
-
-    
+     
 }
