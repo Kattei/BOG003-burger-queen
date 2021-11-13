@@ -9,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuDesayunoComponent implements OnInit {
   items=[];
-  desayun:any = [];
+  desayunoPrueba:any = [];
   visualizarData = () => {
     fetch("./assets/menus.json")
-    .then(msg=>msg.json())
-    .then(data=> console.log(data))
+    // .then(msg=>msg)
+    .then(msg=>{
+      return msg.json();
+    })
+    .then(data=>{
+      this.desayunoPrueba=data.desayuno;
+      console.log(this.desayunoPrueba)
+    })
 
     // .then(data=>{
       
