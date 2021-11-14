@@ -15,8 +15,8 @@ export class MenuAlmuerzoCenaComponent implements OnInit {
       return msg.json();
     })
     .then(data=>{
-      this.almuerzoYcena=data.almuerzo.Hamburguesa;
-      console.log(this.almuerzoYcena.item)
+      this.almuerzoYcena=data.almuerzo;
+      console.log(this.almuerzoYcena)
     })
 
     // .then(data=>{

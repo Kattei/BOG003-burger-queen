@@ -1,7 +1,50 @@
+.header-meseros {
+display: flex;
+justify-content: space-between;
+    .img-logo {
+    width: 18%;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    }
+    img {
+      width: 50px;
+      margin-top: 40px;
+    }
+}
+.cliente-mesa{
+  // display: flex;
+  justify-content: space-around;
 
-  .img-logo {
-    width: 20%;
+  input{
+    padding: 5px 10px;
+    margin: auto;
+    margin-right: 50px;
+    width: 45%;
+    margin-top: 3px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
   }
+  label {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  opcion {
+      background-color: #fff;
+      color: #000;
+      font-size: 15px;
+      font-weight: bold;
+     // padding: px;;
+      width: auto;
+      cursor: pointer;
+    }
+   
+  }
+
   
   nav button {
     padding: 1rem;
@@ -15,6 +58,7 @@
   nav button:hover {
     color: #000;
     background-color: #FFF463;
+    font-weight: bold;
     //border: #B36E29;
     border-color: #B36E29;
         border-width: 3px;
@@ -25,3 +69,9 @@
     background-color: #63ffd0;
     //border: #B36E29;
   } */
+
+
+     
+      
+    
+  

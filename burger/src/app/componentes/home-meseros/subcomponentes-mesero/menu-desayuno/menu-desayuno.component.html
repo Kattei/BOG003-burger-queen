@@ -1,8 +1,15 @@
 <h2 (click)=visualizarData()><strong>Menú Desayuno</strong></h2>
-<div *ngFor="let item of desayunoPrueba">
+<!-- <div *ngFor="let item of desayunoPrueba">
     <p>{{item.item}}</p>
     <p>{{item.precio}}</p>
     <p>{{item.cantidad}}</p>
-</div>
+</div> -->
 
 <!-- <p>{{desayun[0]}}</p> -->
+<ul>
+    <li *ngFor="let item of desayunoPrueba">
+        {{item.item}}
+        {{item.precio}}
+        {{item.cantidad}}
+    </li>
+</ul>

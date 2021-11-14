@@ -1,6 +1,6 @@
 
 <section>
-  <header>
+  <header class="header-meseros">
 
     <img class="img-logo" src="./assets\LOGOBURGER.png"/> 
 
@@ -8,25 +8,34 @@
     <img src="./assets\mesero.png"/> 
     <p>Mesero</p>
     </div>
-    <nav>
+    
       <div>
       <img src="./assets\campana.png"/> 
       <p>ver mesas</p>
       </div>
-
+      <div>
       <img src="./assets/boton_atras.png" alt="boton atras"/>
-    </nav>
+    </div>
   </header>
 
-  <nav>
+  <nav class="nav-meseros">
     <hr>
+    <div class="cliente-mesa">
     <label for="nombreCliente"> Nombre del cliente  </label>
     <input type="text" id="nombreCliente">
 
-    <label for="numeroMesa"> <img src="\assets\mesa.png"/></label>
-    <input type="text" id="numeroMesa">
-
-    <hr>
+    <!-- <label for="numeroMesa"> <img src="\assets\mesa.png"/> -->
+      <!-- <input type="text" id="numeroMesa"> </label>-->
+      <img src="\assets\mesa.png"/>
+      <select id="numeroMesa" class="n-mesas">
+        <option value="mesa">mesa</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+   
+   </div>
+  <hr>
     <button (click)="getMenuDesayuno() " id="Desayuno">Desayuno</button>
     
     <button (click)= " getMenuDesayuno() "id = "almuerzoCena">Almuerzo y Cena</button>
