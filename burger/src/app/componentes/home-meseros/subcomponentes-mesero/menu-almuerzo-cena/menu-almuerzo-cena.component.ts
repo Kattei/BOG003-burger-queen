@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/app/clases/item';
 
 @Component({
   selector: 'app-menu-almuerzo-cena',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuAlmuerzoCenaComponent implements OnInit {
   items=[];
-  almuerzoYcena:any = [];
+  almuerzoYcena:Item[] = [];
+  
+  constructor() { }
+  
+  ngOnInit(): void {
+    this.visualizarData()
+  }
+  
   visualizarData = () => {
     fetch("./assets/menus.json")
     // .then(msg=>msg)
@@ -16,7 +24,8 @@ export class MenuAlmuerzoCenaComponent implements OnInit {
     })
     .then(data=>{
       this.almuerzoYcena=data.almuerzo;
-      console.log(this.almuerzoYcena)
+    
+      console.log()
     })
 
     // .then(data=>{
@@ -30,11 +39,6 @@ export class MenuAlmuerzoCenaComponent implements OnInit {
     // })
     
   }
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
 
 

@@ -1,4 +1,4 @@
-<h2 (click)=visualizarData()><strong>Menú Desayuno</strong></h2>
+
 <!-- <div *ngFor="let item of desayunoPrueba">
     <p>{{item.item}}</p>
     <p>{{item.precio}}</p>
@@ -6,10 +6,13 @@
 </div> -->
 
 <!-- <p>{{desayun[0]}}</p> -->
+<h2>Menú Desayuno</h2>
 <ul>
     <li *ngFor="let item of desayunoPrueba">
         {{item.item}}
         {{item.precio}}
         {{item.cantidad}}
+        <app-inc-dec [itemP]="item"></app-inc-dec>
     </li>
 </ul>
+<app-resumen-compra></app-resumen-compra>

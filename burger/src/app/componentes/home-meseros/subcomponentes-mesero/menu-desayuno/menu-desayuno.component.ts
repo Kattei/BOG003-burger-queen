@@ -10,6 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class MenuDesayunoComponent implements OnInit {
   items=[];
   desayunoPrueba:any = [];
+  
+  
+  
+  constructor() { }
+  
+  ngOnInit(): void {
+    this.visualizarData()
+  }
+  
   visualizarData = () => {
     fetch("./assets/menus.json")
     // .then(msg=>msg)
@@ -32,12 +41,4 @@ export class MenuDesayunoComponent implements OnInit {
     // })
     
   }
-  
-  
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

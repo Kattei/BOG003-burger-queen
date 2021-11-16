@@ -25,13 +25,55 @@
         {
         "item":"Hamburguesa simple",
         "precio":10,
-        "cantidad":""
+        "cantidad":"",
+        "carnes":[
+            {"item":"res"
+            },
+            {"item":"pollo"
+            },
+            {
+            "item":"vegetariana" 
+            } 
+        ],
+        "adicionales":[
+            {
+            "item":"Huevo", 
+            "precio":1,
+            "cantidad":""   
+            },
+            {
+            "item":"Queso",
+            "precio":1,
+            "cantidad":""
+            }
+         ]
         },
+
         {"item":"Hamburguesa doble",
             "precio":15,
-            "cantidad":""
-           }
-    ,
+            "cantidad":"",
+            "carnes":[
+                {"item":"res"
+                },
+                {"item":"pollo"
+                },
+                {
+                "item":"vegetariana" 
+                } 
+            ],
+            "adicionales":[
+                {
+                "item":"Huevo", 
+                "precio":1,
+                "cantidad":""   
+                },
+                {
+                "item":"Queso",
+                "precio":1,
+                "cantidad":""
+                }
+             ]
+            },  
 
         {
         "item":"Papas fritas", 
@@ -63,27 +105,8 @@
         "precio":10,
         "cantidad":""
         }
-  ,
-    {"tipo de carne":[
-        {"item":"res"
-        },
-        {"item":"pollo"
-        },
-        {
-        "item":"vegetariana" 
-        } 
-    ]},
-    {"adicional":[
-        {"item":"Huevo", 
-        "precio":1,
-        "cantidad":""   
-        },
-        {
-        "item":"Queso ",
-        "precio":1,
-        "cantidad":""
-        }        
-    ]}
+  
+    
 ]
  
 }

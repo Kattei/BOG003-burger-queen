@@ -1,4 +1,4 @@
-<h2 (click)=visualizarData()><strong>Menú Almuerzo y Cena</strong></h2>
+<h2>Menú Almuerzo y Cena</h2>
 <!-- <div *ngFor="let item of almuerzoYcena">
     <p>{{item.almuerzo}}</p>
     <p>{{item.precio}}</p>
@@ -10,5 +10,16 @@
         {{item.item}}
         {{item.precio}}
         {{item.cantidad}}
+        <app-inc-dec></app-inc-dec>
+        <p *ngFor= "let carne of item.carnes" >
+            {{carne.item}}
+        </p>
+
+        <p *ngFor="let adicional of item.adicionales">
+            {{adicional.item}}
+            {{adicional.precio}}
+            {{adicional.cantidad}}
+        </p>
     </li>
 </ul>
+<app-resumen-compra></app-resumen-compra>

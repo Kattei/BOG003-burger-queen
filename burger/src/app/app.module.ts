@@ -12,6 +12,8 @@ import { StatusPedidosComponent } from './componentes/status-pedidos/status-pedi
 import { LoginUserComponent } from './componentes/login-user/login-user.component';
 import { MenuDesayunoComponent } from './componentes/home-meseros/subcomponentes-mesero/menu-desayuno/menu-desayuno.component';
 import { MenuAlmuerzoCenaComponent } from './componentes/home-meseros/subcomponentes-mesero/menu-almuerzo-cena/menu-almuerzo-cena.component';
+import { ResumenCompraComponent } from './componentes/home-meseros/subcomponentes-mesero/resumen-compra/resumen-compra.component';
+import { IncDecComponent } from './componentes/home-meseros/subcomponentes-mesero/inc-dec/inc-dec.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { MenuAlmuerzoCenaComponent } from './componentes/home-meseros/subcompone
     StatusPedidosComponent,
     LoginUserComponent,
     MenuDesayunoComponent,
-    MenuAlmuerzoCenaComponent
+    MenuAlmuerzoCenaComponent,
+    ResumenCompraComponent,
+    IncDecComponent
   ],
   imports: [
     BrowserModule,
