@@ -3,21 +3,21 @@
     "desayuno":[
         {"item":"café americano",
          "precio":5,
-         "cantidad":""
+         "cantidad":0
         },
         {"item":"café con leche",
          "precio":7,
-         "cantidad":""
+         "cantidad":0
         },
         {
         "item":"Sandwich de jamón y ques0", 
         "precio":10,
-        "cantidad":""   
+        "cantidad":0   
         },
         {
         "item":"Jugo de frutas natural ",
         "precio":7,
-        "cantidad":""
+        "cantidad":0
         }
     ],
     "almuerzo":[
@@ -25,7 +25,7 @@
         {
         "item":"Hamburguesa simple",
         "precio":10,
-        "cantidad":"",
+        "cantidad":0,
         "carnes":[
             {"item":"res"
             },
@@ -39,19 +39,19 @@
             {
             "item":"Huevo", 
             "precio":1,
-            "cantidad":""   
+            "cantidad":0   
             },
             {
             "item":"Queso",
             "precio":1,
-            "cantidad":""
+            "cantidad":0
             }
          ]
         },
 
         {"item":"Hamburguesa doble",
             "precio":15,
-            "cantidad":"",
+            "cantidad":0,
             "carnes":[
                 {"item":"res"
                 },
@@ -65,12 +65,12 @@
                 {
                 "item":"Huevo", 
                 "precio":1,
-                "cantidad":""   
+                "cantidad":0   
                 },
                 {
                 "item":"Queso",
                 "precio":1,
-                "cantidad":""
+                "cantidad":0
                 }
              ]
             },  
@@ -78,32 +78,32 @@
         {
         "item":"Papas fritas", 
         "precio":5,
-        "cantidad":""   
+        "cantidad":0   
         },
         {
         "item":"Aros de cebolla ",
         "precio":5,
-        "cantidad":""
+        "cantidad":0
         }
     ,
  
         {"item":"Agua 500ml",
         "precio":5,
-        "cantidad":""
+        "cantidad":0
         },
         {"item":"Agua 750ml",
         "precio":7,
-        "cantidad":""
+        "cantidad":0
         },
         {
         "item":"bebida/gaseosa 500ml", 
         "precio":7,
-        "cantidad":""   
+        "cantidad":0   
         },
         {
         "item":"bebida/gaseosa",
         "precio":10,
-        "cantidad":""
+        "cantidad":0
         }
   
     
