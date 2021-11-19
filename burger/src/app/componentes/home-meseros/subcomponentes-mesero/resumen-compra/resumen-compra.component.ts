@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { contador } from 'src/app/componentes/home-meseros/subcomponentes-mesero/inc-dec/inc-dec.component'
+import { ItemOrder } from 'src/app/clases/itemOrder';
+
 
 @Component({
   selector: 'app-resumen-compra',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resumen-compra.component.scss']
 })
 export class ResumenCompraComponent implements OnInit {
-
+pedido: ItemOrder[] = []
   constructor() { }
 
   ngOnInit(): void {
-   // contador()
+  
   }
 
+  showItem = (event: any) =>{
+console.log("oka", event)
+  }
 }

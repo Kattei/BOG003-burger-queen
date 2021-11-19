@@ -9,10 +9,9 @@
 <h2>Menú Desayuno</h2>
 <ul>
     <li *ngFor="let item of desayunoPrueba">
-        {{item.item}}
-        {{item.precio}}
-        {{item.cantidad}}
-        <app-inc-dec [itemP]="item"></app-inc-dec>
+       
+        
+        <app-inc-dec [Item]="item"></app-inc-dec>
     </li>
 </ul>
-<app-resumen-compra></app-resumen-compra>
+<app-resumen-compra ></app-resumen-compra>

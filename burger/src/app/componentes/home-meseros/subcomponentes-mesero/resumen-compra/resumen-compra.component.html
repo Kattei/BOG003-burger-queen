@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <h3>Resumen de la Compra</h3>
     <p>Items</p>
     <p>Cant.</p>
@@ -11,4 +11,20 @@
     <div >
         <img class="delete" src="\assets\Eliminar.png" alt="">
     </div>
-</div>
+</div> -->
+<table>
+    <tr>
+      <th>Items</th>
+      <th>Cant.</th>
+      <th>Precio</th>
+    </tr>
+    <tr  *ngFor="let itemPedido of pedido" >
+      <app-inc-dec (itemSelected)="showItem($event)"> </app-inc-dec>
+
+      <td>{{itemPedido.producto.nombre}}</td>
+      <td>{{itemPedido.cantidad}}</td>
+      <td>{{itemPedido.precioOrden}}</td>
+    </tr>
+  
+  </table>
+  

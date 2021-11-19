@@ -7,10 +7,8 @@
 </div> -->
 <ul>
     <li *ngFor="let item of almuerzoYcena">
-        {{item.item}}
-        {{item.precio}}
-        {{item.cantidad}}
-        <app-inc-dec></app-inc-dec>
+        
+        <app-inc-dec [Item]="item"></app-inc-dec>
         <p *ngFor= "let carne of item.carnes" >
             {{carne.item}}
         </p>

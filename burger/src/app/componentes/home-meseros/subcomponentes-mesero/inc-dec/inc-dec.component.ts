@@ -1,6 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+
+
+
 
 import { Item } from 'src/app/clases/item';
+import { ItemOrder } from 'src/app/clases/itemOrder';
 
 
 
@@ -13,19 +17,43 @@ export class IncDecComponent implements OnInit {
 //incremento:number = 1
 //number:number=0
 
-@Input()  itemP: Item | undefined
+
+//@Input()  Item: Item | undefined = new Observable<Item>()
+@Input()  Item: Item = new Item();
+ pruebaOrden: ItemOrder = new ItemOrder();
+
+ 
+  //@Input()  name = '';
+  @Output() itemSelected = new EventEmitter<ItemOrder>();
+  //didVote = false;
+
+  // vote(agreed: boolean) {
+  //   this.voted.emit(agreed);
+  //   this.didVote = true;
+  // }
+
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.itemP)
+   
   }
 contador = (incremento:number) =>{
-  if(this.itemP !==undefined){
+  if(this.Item !==undefined){
 
-    this.itemP.cantidad += incremento
+    this.Item.cantidad += incremento
   }
-console.log(this.itemP);
+console.log(this.Item);
 
 }
 
+
+verResumenCompra = () =>{
+ this.pruebaOrden.producto = this.Item
+  console.log(this.pruebaOrden.producto)
+  
+
+  this.itemSelected.emit(this.pruebaOrden)
+
+}
 }
