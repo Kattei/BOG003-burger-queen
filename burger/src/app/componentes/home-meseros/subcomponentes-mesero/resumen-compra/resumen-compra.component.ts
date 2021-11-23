@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Item } from 'src/app/clases/item';
 import { ItemOrder } from 'src/app/clases/itemOrder';
+import { GeneralService } from '../../../../servicios/general.service';
 
 
 @Component({
@@ -8,14 +11,28 @@ import { ItemOrder } from 'src/app/clases/itemOrder';
   styleUrls: ['./resumen-compra.component.scss']
 })
 export class ResumenCompraComponent implements OnInit {
-pedido: ItemOrder[] = []
-  constructor() { }
+  // @Input()
+  pedido: Item[]=[];
+  pedidoSubcripcion: Subscription =new Subscription();
+
+  constructor(private recibirInfo:GeneralService) { }
 
   ngOnInit(): void {
+    this.pedidoSubcripcion=this.recibirInfo.itemListo$.subscribe((response)=>{
+      console.log('look',response)
+      this.pedido.push(response)
+      this.showItem()
+    });
   
   }
+  
 
-  showItem = (event: any) =>{
-console.log("oka", event)
+
+  showItem = () =>{  
+  this.pedido.forEach(element => {
+    console.log('elementos', element)
+    
+  });
+  console.log("observando", this.pedido)
   }
 }

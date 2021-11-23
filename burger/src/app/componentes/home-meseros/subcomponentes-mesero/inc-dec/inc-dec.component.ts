@@ -5,6 +5,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 import { Item } from 'src/app/clases/item';
 import { ItemOrder } from 'src/app/clases/itemOrder';
+import { GeneralService } from 'src/app/servicios/general.service';
 
 
 
@@ -20,11 +21,12 @@ export class IncDecComponent implements OnInit {
 
 //@Input()  Item: Item | undefined = new Observable<Item>()
 @Input()  Item: Item = new Item();
- pruebaOrden: ItemOrder = new ItemOrder();
+          pruebaOrden: Item = new Item();
 
  
   //@Input()  name = '';
-  @Output() itemSelected = new EventEmitter<ItemOrder>();
+  @Output() 
+  itemSelected: EventEmitter<Item>= new EventEmitter<Item>();
   //didVote = false;
 
   // vote(agreed: boolean) {
@@ -33,7 +35,8 @@ export class IncDecComponent implements OnInit {
   // }
 
 
-  constructor() { }
+  constructor(private enviarInfo:GeneralService) { 
+  }
 
   ngOnInit(): void {
    
@@ -49,11 +52,15 @@ console.log(this.Item);
 
 
 verResumenCompra = () =>{
- this.pruebaOrden.producto = this.Item
-  console.log(this.pruebaOrden.producto)
-  
+//  this.pruebaOrden.producto = this.Item
+//   console.log(this.pruebaOrden.producto)
+this.pruebaOrden = this.Item
+console.log(this.pruebaOrden)
 
-  this.itemSelected.emit(this.pruebaOrden)
+  
+// con el metodo emmit se emite al componente padre la variable que se desea pasar de este componente a otro
+  // this.itemSelected.emit(this.pruebaOrden)
+  this.enviarInfo.itemListo$.emit(this.pruebaOrden);
 
 }
 }

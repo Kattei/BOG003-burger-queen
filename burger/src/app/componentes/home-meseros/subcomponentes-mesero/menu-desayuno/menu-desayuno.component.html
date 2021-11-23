@@ -6,12 +6,32 @@
 </div> -->
 
 <!-- <p>{{desayun[0]}}</p> -->
+
 <h2>Menú Desayuno</h2>
 <ul>
     <li *ngFor="let item of desayunoPrueba">
        
         
-        <app-inc-dec [Item]="item"></app-inc-dec>
+        <app-inc-dec [Item]="item" ></app-inc-dec>
     </li>
 </ul>
-<app-resumen-compra ></app-resumen-compra>
+<app-resumen-compra></app-resumen-compra>
+
+
+<!-- <p>{{desayun[0]}}</p> -->
+<!-- <h2>Menú Desayuno</h2>
+<ul><div *ngFor="let item of desayunoPrueba">
+       <p>{{item.item}}</p> 
+      <p>{{item.precio}}</p>  
+      <p>{{item.cantidad}}</p>
+        <app-inc-dec [Item]="item"></app-inc-dec>
+    </div> -->
+   
+    <!-- <div *ngFor="let item of desayunoPrueba">
+        <p>{{item.nombre}}</p>
+        <p>{{item.precio}}</p>
+        <p>{{item.cantidad}}</p>
+        
+    </div> 
+    <app-resumen-compra></app-resumen-compra> -->
+    

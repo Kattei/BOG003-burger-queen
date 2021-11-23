@@ -1,4 +1,7 @@
+import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/app/clases/item';
+import { ItemOrder } from '../../../../clases/itemOrder';
 
 
 
@@ -10,10 +13,15 @@ import { Component, OnInit } from '@angular/core';
 export class MenuDesayunoComponent implements OnInit {
   items=[];
   desayunoPrueba:any = [];
+
+
+  showItem: Item[];
   
   
   
-  constructor() { }
+  constructor() { 
+    this.showItem=[]
+  }
   
   ngOnInit(): void {
     this.visualizarData()
@@ -40,5 +48,9 @@ export class MenuDesayunoComponent implements OnInit {
     
     // })
     
+  }
+  muestraResumen(event:any){
+    this.showItem.push(event);
+
   }
 }
