@@ -1,10 +1,17 @@
 
 
-<section>
+<section id="contendorMenu" class="MenuDesayuno"> 
     <H2>Menú Desayuno</H2>
- 
+    <table>
+        <tr>
+          <th>Items</th>
+          <th>Precio</th>
+          <th></th>
+        </tr>
+             
+    </table>
     <div  *ngFor="let item of desayunoPrueba" >
-      <app-inc-dec [Item]="item" ></app-inc-dec>
+        <app-inc-dec [Item]="item" ></app-inc-dec>
     </div>
   
 </section>

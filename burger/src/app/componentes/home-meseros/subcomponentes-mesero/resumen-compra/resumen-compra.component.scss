@@ -7,13 +7,22 @@ border:6px solid #6EC6D2;
 height: 260px;
 width: 80%;
 box-sizing: content-box;
+margin-top: 20%;
 
 }
+h2{
+   
+    margin-left: 20px;
+}
 .exit{
-    width: 5%;
+    width: 3%;
+    height: 3%;
+    margin-right: 20px;
+    margin-top: 20px;
+
 }
 .delete{
-    width: 5%;
+    width: 10%;
 }
 section{
     background-size: cover;
@@ -37,4 +46,9 @@ section{
             
          
     }
+}
+// este es el header del reusmencompra
+#headerResumenCompra{
+    display: inline-flex;
+    justify-content: space-between ;
 }

@@ -8,8 +8,8 @@
   </div> -->
   <section id="resumenCompra" class="container hideResumen showResumen">
     
-    <div>
-      <p>Resumen de la compra</p>
+    <div id="headerResumenCompra">
+      <h2>Resumen de la compra</h2>
       <img class="exit"src="\assets\cerrar.png" alt="boton cerrar resumen">
     </div>
   <table>
@@ -21,9 +21,7 @@
     
     <tr  *ngFor="let itemPedido of pedido" >
       
-      <td>{{itemPedido.nombre}}
-        
-      </td>
+      <td>{{itemPedido.nombre}}</td>
       <td>${{itemPedido.precio}}</td>
       <td>{{itemPedido.cantidad}}</td>
       <td>
