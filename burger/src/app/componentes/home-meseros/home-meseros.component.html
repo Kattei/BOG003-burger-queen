@@ -13,9 +13,10 @@
       <img src="./assets\campana.png"/> 
       <p>ver mesas</p>
       </div>
+
       <div>
       <img src="./assets/boton_atras.png" alt="boton atras"/>
-    </div>
+      </div>
   </header>
 
   <nav class="nav-meseros">
@@ -37,11 +38,9 @@
    </div>
   <hr>
     <button (click)="getMenuDesayuno() " id="Desayuno">Desayuno</button>
-   
-    
     <button (click)= " getMenuDesayuno() "id = "almuerzoCena">Almuerzo y Cena</button>
-    <app-menu-desayuno *ngIf="showBreakfast"></app-menu-desayuno>
-    <app-menu-almuerzo-cena *ngIf="!showBreakfast"></app-menu-almuerzo-cena>
+    <app-menu-desayuno *ngIf="!showBreakfast"></app-menu-desayuno>    
+    <app-menu-almuerzo-cena *ngIf="showBreakfast"></app-menu-almuerzo-cena>
   </nav>
 </section> 
   <router-outlet></router-outlet>

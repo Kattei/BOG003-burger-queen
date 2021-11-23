@@ -16,8 +16,7 @@ export class HomeMeserosComponent implements OnInit {
   
 
   getMenuDesayuno():void{
-
-    const mensaje="holi que se dice";
+  
    this.showBreakfast =!this.showBreakfast;
   }
 

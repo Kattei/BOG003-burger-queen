@@ -47,7 +47,6 @@ contador = (incremento:number) =>{
     this.Item.cantidad += incremento
   }
 console.log(this.Item);
-
 }
 
 

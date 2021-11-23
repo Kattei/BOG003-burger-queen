@@ -5,15 +5,53 @@
     <p>Precio</p>
     <hr>
     <p>Total</p>
-    <div>
-        <img class="exit"src="\assets\cerrar.png" alt="">
-    </div>
-    <div >
-        <img class="delete" src="\assets\Eliminar.png" alt="">
-    </div>
   </div> -->
-  <p>mira esto es el resumen</p>
-  <p>{{pedido}}</p>
+  <section id="resumenCompra" class="container hideResumen showResumen">
+    
+    <div>
+      <p>Resumen de la compra</p>
+      <img class="exit"src="\assets\cerrar.png" alt="boton cerrar resumen">
+    </div>
+  <table>
+    <tr>
+      <th>Items</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+    </tr>
+    
+    <tr  *ngFor="let itemPedido of pedido" >
+      
+      <td>{{itemPedido.nombre}}
+        
+      </td>
+      <td>${{itemPedido.precio}}</td>
+      <td>{{itemPedido.cantidad}}</td>
+      <td>
+        <div>
+          <img class="delete" src="\assets\Eliminar.png" alt="eliminar item">
+        </div>
+        </td> 
+    </tr>
+  
+  </table>
+  </section>
+
+
+
+
+
+
+  <!-- <div *ngFor="let elemento of pedido">
+    <nav>
+      <ul>Item</ul>
+      <ul>Cantidad</ul>
+      <ul>Precio</ul>
+    </nav>
+    <p>{{elemento.nombre}}</p>
+    <p>{{elemento.precio}}
+      <p>{{elemento.cantidad}}</p>
+      
+    </div> -->
  
   
 <!-- <table>
