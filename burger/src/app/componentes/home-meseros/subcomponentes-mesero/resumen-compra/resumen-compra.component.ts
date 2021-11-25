@@ -19,9 +19,18 @@ export class ResumenCompraComponent implements OnInit {
 
   ngOnInit(): void {
     this.pedidoSubcripcion=this.recibirInfo.itemListo$.subscribe((response)=>{
-      console.log('look',response)
-      this.pedido.push(response)
+      console.log('look',response);
+      if(this.pedido.length === 0){
+      this.pedido.push(response);
       this.showItem()
+      }else {
+      this.pedido.forEach((elemento)=>{
+        if(elemento.nombre===response.nombre){
+          elemento.cantidad=response.cantidad;
+          console.log('condicionales',this.pedido);
+        }
+      }) 
+      }
     });
   
   }
@@ -30,6 +39,10 @@ export class ResumenCompraComponent implements OnInit {
 
   showItem = () =>{  
   this.pedido.forEach(element => {
+    // para seleccionar elementos que sean diferentes de cero
+    const [nombre, precio, cantidad ]=this.pedido
+    console.log('numero',cantidad);
+
     console.log('elementos', element)
     
   });

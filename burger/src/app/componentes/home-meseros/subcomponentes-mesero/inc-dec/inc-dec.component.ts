@@ -59,7 +59,8 @@ console.log(this.pruebaOrden)
   
 // con el metodo emmit se emite al componente padre la variable que se desea pasar de este componente a otro
   // this.itemSelected.emit(this.pruebaOrden)
+  if (this.pruebaOrden.cantidad !== 0) {
   this.enviarInfo.itemListo$.emit(this.pruebaOrden);
-
+  }
 }
 }
