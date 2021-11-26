@@ -14,6 +14,7 @@ import { MenuDesayunoComponent } from './componentes/home-meseros/subcomponentes
 import { MenuAlmuerzoCenaComponent } from './componentes/home-meseros/subcomponentes-mesero/menu-almuerzo-cena/menu-almuerzo-cena.component';
 import { ResumenCompraComponent } from './componentes/home-meseros/subcomponentes-mesero/resumen-compra/resumen-compra.component';
 import { IncDecComponent } from './componentes/home-meseros/subcomponentes-mesero/inc-dec/inc-dec.component';
+import { MultiplicarPrecioPipe } from './pipe/multiplicar-precio.pipe';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { IncDecComponent } from './componentes/home-meseros/subcomponentes-meser
     MenuDesayunoComponent,
     MenuAlmuerzoCenaComponent,
     ResumenCompraComponent,
-    IncDecComponent
+    IncDecComponent,
+    MultiplicarPrecioPipe
   ],
   imports: [
     BrowserModule,

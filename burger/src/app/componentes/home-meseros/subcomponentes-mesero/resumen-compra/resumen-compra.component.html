@@ -22,7 +22,7 @@
     <tr  *ngFor="let itemPedido of pedido" >
       
       <td>{{itemPedido.nombre}}</td>
-      <td>${{itemPedido.precio}}</td>
+      <td>${{Item.itemPedido.precio | multiplicarPrecio: itemPedido.cantidad}}</td>
       <td>{{itemPedido.cantidad}}</td>
       <td>
         <div>
@@ -33,37 +33,3 @@
   
   </table>
   </section>
-
-
-
-
-
-
-  <!-- <div *ngFor="let elemento of pedido">
-    <nav>
-      <ul>Item</ul>
-      <ul>Cantidad</ul>
-      <ul>Precio</ul>
-    </nav>
-    <p>{{elemento.nombre}}</p>
-    <p>{{elemento.precio}}
-      <p>{{elemento.cantidad}}</p>
-      
-    </div> -->
- 
-  
-<!-- <table>
-    <tr>
-      <th>Items</th>
-      <th>Cant.</th>
-      <th>Precio</th>
-    </tr> -->
-    <!-- <tr  *ngFor="let itemPedido of pedido" >
-
-      <td>{{itemPedido.producto.nombre}}</td>
-      <td>{{itemPedido.cantidad}}</td>
-      <td>{{itemPedido.precioOrden}}</td>
-    </tr> -->
-  
-  <!-- </table>
-   -->
