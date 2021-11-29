@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 
 
 
 import { Item } from 'src/app/clases/item';
-import { ItemOrder } from 'src/app/clases/itemOrder';
+//import { ItemOrder } from 'src/app/clases/itemOrder';
 import { GeneralService } from 'src/app/servicios/general.service';
 
 
@@ -50,17 +51,18 @@ console.log(this.Item);
 }
 
 
-verResumenCompra = () =>{
+verResumenCompra = (() =>{
 //  this.pruebaOrden.producto = this.Item
 //   console.log(this.pruebaOrden.producto)
 this.pruebaOrden = this.Item
-console.log(this.pruebaOrden)
 
-  
+
+
 // con el metodo emmit se emite al componente padre la variable que se desea pasar de este componente a otro
-  // this.itemSelected.emit(this.pruebaOrden)
-  if (this.pruebaOrden.cantidad !== 0) {
-  this.enviarInfo.itemListo$.emit(this.pruebaOrden);
-  }
-}
+// this.itemSelected.emit(this.pruebaOrden)
+this.enviarInfo.itemListo$.emit(this.pruebaOrden);
+
+   
+
+})
 }

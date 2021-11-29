@@ -11,7 +11,7 @@
     
       <div>
       <img src="./assets\campana.png"/> 
-      <p>ver mesas</p>
+      <p>Ver Mesas</p>
       </div>
 
       <div>
@@ -29,7 +29,7 @@
       <!-- <input type="text" id="numeroMesa"> </label>-->
       <img src="\assets\mesa.png"/>
       <select id="numeroMesa" class="n-mesas">
-        <option value="mesa">mesa</option>
+        <option value="mesa">Mesa</option>
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -37,10 +37,13 @@
    
    </div>
   <hr>
+  <div>
     <button (click)="getMenuDesayuno() " id="Desayuno">Desayuno</button>
     <button (click)= " getMenuDesayuno() "id = "almuerzoCena">Almuerzo y Cena</button>
     <app-menu-desayuno *ngIf="!showBreakfast"></app-menu-desayuno>    
     <app-menu-almuerzo-cena *ngIf="showBreakfast"></app-menu-almuerzo-cena>
+  </div>
+  <hr>
   </nav>
 </section> 
   <router-outlet></router-outlet>
