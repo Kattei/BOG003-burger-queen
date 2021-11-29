@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 
 
 
 import { Item } from 'src/app/clases/item';
-import { ItemOrder } from 'src/app/clases/itemOrder';
+//import { ItemOrder } from 'src/app/clases/itemOrder';
 import { GeneralService } from 'src/app/servicios/general.service';
 
 
@@ -18,12 +19,11 @@ export class IncDecComponent implements OnInit {
 //incremento:number = 1
 //number:number=0
 
-
 //@Input()  Item: Item | undefined = new Observable<Item>()
 @Input()  Item: Item = new Item();
           pruebaOrden: Item = new Item();
 
- 
+
   //@Input()  name = '';
   @Output() 
   itemSelected: EventEmitter<Item>= new EventEmitter<Item>();
@@ -35,32 +35,34 @@ export class IncDecComponent implements OnInit {
   // }
 
 
-  constructor(private enviarInfo:GeneralService) { 
+  constructor(private enviarInfo: GeneralService) {
   }
 
   ngOnInit(): void {
-   
+
   }
-contador = (incremento:number) =>{
-  if(this.Item !==undefined){
+  contador = (incremento: number) => {
+    if (this.Item !== undefined) {
 
-    this.Item.cantidad += incremento
+      this.Item.cantidad += incremento
+    }
+    console.log(this.Item);
   }
-console.log(this.Item);
-}
 
 
-verResumenCompra = () =>{
-//  this.pruebaOrden.producto = this.Item
-//   console.log(this.pruebaOrden.producto)
-this.pruebaOrden = this.Item
-console.log(this.pruebaOrden)
+  verResumenCompra = (() => {
+    //  this.pruebaOrden.producto = this.Item
+    //   console.log(this.pruebaOrden.producto)
+    this.pruebaOrden = this.Item
+    // con el metodo emmit se emite al componente padre la variable que se desea pasar de este componente a otro
+    // this.itemSelected.emit(this.pruebaOrden)
+    if (this.pruebaOrden.cantidad !== 0) {
+      this.enviarInfo.itemListo$.emit(this.pruebaOrden);
+    }
+  })
+// this.itemSelected.emit(this.pruebaOrden)
+// this.enviarInfo.itemListo$.emit(this.pruebaOrden);
 
-  
-// con el metodo emmit se emite al componente padre la variable que se desea pasar de este componente a otro
-  // this.itemSelected.emit(this.pruebaOrden)
-  if (this.pruebaOrden.cantidad !== 0) {
-  this.enviarInfo.itemListo$.emit(this.pruebaOrden);
-  }
-}
+
+
 }

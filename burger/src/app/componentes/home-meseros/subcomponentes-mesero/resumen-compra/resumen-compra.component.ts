@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Item } from 'src/app/clases/item';
-import { ItemOrder } from 'src/app/clases/itemOrder';
+//import { ItemOrder } from 'src/app/clases/itemOrder';
 import { GeneralService } from '../../../../servicios/general.service';
 
 
@@ -15,21 +15,37 @@ export class ResumenCompraComponent implements OnInit {
   pedido: Item[]=[];
   pedidoSubcripcion: Subscription =new Subscription();
 
-  constructor(private recibirInfo:GeneralService) { }
-
+  constructor(private recibirInfo:GeneralService) { 
+    
+  }
   ngOnInit(): void {
     this.pedidoSubcripcion=this.recibirInfo.itemListo$.subscribe((response)=>{
       console.log('look',response);
-      if(this.pedido.length === 0){
+      if(this.pedido.length === 0 ){
       this.pedido.push(response);
-      this.showItem()
+      //this.showItem()
       }else {
-      this.pedido.forEach((elemento)=>{
-        if(elemento.nombre===response.nombre){
-          elemento.cantidad=response.cantidad;
-          console.log('condicionales',this.pedido);
+        let concidencias = false;
+        for (let i = 0; i < this.pedido.length; i++) {
+          if(this.pedido[i].nombre == response.nombre){
+            this.pedido[i].cantidad=response.cantidad;
+            concidencias= true;
+                console.log('condicionales',this.pedido);
+                break
+          }
+          
         }
-      }) 
+        if(!concidencias){
+          this.pedido.push(response);
+        }
+      // this.pedido.forEach((elemento)=>{
+      //   if(elemento.nombre==response.nombre){
+      //     elemento.cantidad=response.cantidad;
+      //     console.log('condicionales',this.pedido);
+      //     break
+      //   }
+      
+      // }) 
       }
     });
   
@@ -49,3 +65,4 @@ export class ResumenCompraComponent implements OnInit {
   console.log("observando", this.pedido)
   }
 }
+
