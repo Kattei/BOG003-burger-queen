@@ -22,7 +22,7 @@
     <tr  *ngFor="let itemPedido of pedido" >
       
       <td>{{itemPedido.nombre}}</td>
-      <td>${{Item.itemPedido.precio | multiplicarPrecio: itemPedido.cantidad}}</td>
+      <td>${{itemPedido.precio | multiplicarPrecio: itemPedido.cantidad}}</td>
       <td>{{itemPedido.cantidad}}</td>
       <td>
         <div>

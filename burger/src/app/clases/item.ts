@@ -3,7 +3,7 @@ import { Carnes } from "./carnes";
 
 export class Item {
  nombre : string = "";
- precio: number| undefined;
+ precio: number = 0
  cantidad: any| undefined;
  adicionales?: Adicionales[] | undefined
  carnes?: Carnes[] | undefined
