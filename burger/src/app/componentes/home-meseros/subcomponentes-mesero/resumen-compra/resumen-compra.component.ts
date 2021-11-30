@@ -24,9 +24,18 @@ export class ResumenCompraComponent implements OnInit {
   ngOnInit(): void {
     // this.showItem();
     this.pedidoSubcripcion = this.recibirInfo.itemListo$.subscribe((response) => {
+    
       console.log('look', response);
       if (this.pedido.length === 0) {
         this.pedido.push(response);
+        this.sumaTotal=[];
+          this.pedido.forEach(element => {
+            this.sumaTotal.push(element.cantidad * element.precio);
+            const reducer = (accumulator: number, curr: number) => accumulator + curr;
+            console.log('sumatotal',this.sumaTotal)
+            this.total = this.sumaTotal.reduce(reducer);
+          
+          });
 
         //this.showItem()
       } else {
@@ -48,12 +57,17 @@ export class ResumenCompraComponent implements OnInit {
         if (!concidencias) {
           this.pedido.push(response);
         }
+
         
-        this.pedido.forEach(element => {
-          this.sumaTotal.push(element.cantidad * element.precio);
-          const reducer = (accumulator: number, curr: number) => accumulator + curr;
-          this.total = this.sumaTotal.reduce(reducer);
-        });
+        this.sumaTotal=[];
+          this.pedido.forEach(element => {
+            this.sumaTotal.push(element.cantidad * element.precio);
+            const reducer = (accumulator: number, curr: number) => accumulator + curr;
+            console.log('sumatotal',this.sumaTotal)
+            this.total = this.sumaTotal.reduce(reducer);
+          
+          });
+        
 
         // this.pedido.forEach((elemento)=>{
         //   if(elemento.nombre==response.nombre){
