@@ -25,6 +25,7 @@ justify-content: space-between;
     background-color: #fff;
     color: #000;
     border-radius: 10px;
+    border:4px solid #6EC6D2;
     justify-content: center;
     cursor: pointer;
     font-size: 20px;
@@ -42,6 +43,7 @@ justify-content: space-between;
      // padding: px;;
       width: auto;
       cursor: pointer;
+     // border:4px solid #6EC6D2;
     }
    
   }
@@ -55,6 +57,9 @@ justify-content: space-between;
     background-color: #FFF463;
     //color: #f5f254;
     border-radius: 4px;
+    margin-left: 2%;
+    width: 20%;
+    border: none;
   }
   nav button:hover {
     color: #000;
@@ -62,7 +67,7 @@ justify-content: space-between;
     font-weight: bold;
     //border: #B36E29;
     border-color: #B36E29;
-        border-width: 3px;
+        border-width: 4px;
         border-style: solid;
         
   }

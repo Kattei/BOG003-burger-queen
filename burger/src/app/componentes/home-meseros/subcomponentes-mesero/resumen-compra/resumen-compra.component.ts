@@ -22,13 +22,13 @@ export class ResumenCompraComponent implements OnInit {
     
   }
   ngOnInit(): void {
-    
+    // this.showItem();
     this.pedidoSubcripcion = this.recibirInfo.itemListo$.subscribe((response) => {
       console.log('look', response);
       if (this.pedido.length === 0) {
         this.pedido.push(response);
 
-        
+        //this.showItem()
       } else {
         let concidencias = false;
         for (let i = 0; i < this.pedido.length; i++) {
