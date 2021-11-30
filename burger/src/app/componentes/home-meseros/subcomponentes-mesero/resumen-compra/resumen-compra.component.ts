@@ -22,42 +22,61 @@ export class ResumenCompraComponent implements OnInit {
     
   }
   ngOnInit(): void {
-    // this.showItem();
     this.pedidoSubcripcion = this.recibirInfo.itemListo$.subscribe((response) => {
-      console.log('look', response);
-      if (this.pedido.length === 0) {
-        this.pedido.push(response);
+       const totalProductos = ()=>{
+         
+         this.sumaTotal=[];
+           this.pedido.forEach(element => {
+             this.sumaTotal.push(element.cantidad * element.precio);
+             const reducer = (accumulator: number, curr: number) => accumulator + curr;
+             console.log('sumatotal',this.sumaTotal)
+             this.total = this.sumaTotal.reduce(reducer);
+           
+           });
+       }
 
-        //this.showItem()
+      console.log('look', response);
+      if (this.pedido.length === 0 ) {
+        this.pedido.push(response);
+            totalProductos()
+        
       } else {
         let concidencias = false;
         for (let i = 0; i < this.pedido.length; i++) {
-          if (this.pedido[i].nombre == response.nombre) {
+          if (this.pedido[i].nombre == response.nombre ) {
             this.pedido[i].cantidad = response.cantidad;
-            
             concidencias = true;
             
             console.log('condicionales', this.pedido);
             break
           }
         }
+       
 
         if (!concidencias) {
           this.pedido.push(response);
         }
+
+        this.pedido.forEach((element)=>{
+          if(element.cantidad === 0){
+            const posicionIndex =this.pedido.indexOf(element)
+            this.pedido.splice(posicionIndex, 1)
+           console.log("borrar",this.pedido) 
+          }
+        })
+
         
-       // this.pedido.forEach(element => {
-         this.sumaTotal.push(response.cantidad * response.precio);
+       totalProductos()
+        
 
-         const reducer = (accumulator: number, curr: number) => accumulator + curr;
-         this.total = this.sumaTotal.reduce(reducer);
-         
-        //});
-
-    
       }
     }
 
   );
 
   }}
+  
+
+
+ 
+  

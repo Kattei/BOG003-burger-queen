@@ -43,8 +43,10 @@ export class IncDecComponent implements OnInit {
   }
   contador = (incremento: number) => {
     if (this.Item !== undefined) {
-
+      
       this.Item.cantidad += incremento
+    
+      
     }
     console.log(this.Item);
   }
@@ -56,8 +58,13 @@ export class IncDecComponent implements OnInit {
     this.pruebaOrden = this.Item
     // con el metodo emmit se emite al componente padre la variable que se desea pasar de este componente a otro
     // this.itemSelected.emit(this.pruebaOrden)
+    let listoBoton = false
     if (this.pruebaOrden.cantidad !== 0) {
+      listoBoton=true
       this.enviarInfo.itemListo$.emit(this.pruebaOrden);
+    }else{
+    
+
     }
   })
 // this.itemSelected.emit(this.pruebaOrden)
