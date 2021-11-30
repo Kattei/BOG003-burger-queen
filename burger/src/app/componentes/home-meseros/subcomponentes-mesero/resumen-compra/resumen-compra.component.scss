@@ -52,3 +52,32 @@ section{
     display: inline-flex;
     justify-content: space-between ;
 }
+
+    .boton-preparar{
+        padding: 1rem;
+        text-decoration: none;
+        margin-top: 10px;
+        display: inline-block;
+        background-color: #1B3C66;
+        //color: #f5f254;
+        border-radius: 4px;
+        margin-left: 2%;
+        width: 30%;
+        border: none;
+        color: #fff;
+      }
+    //   .boton-preparar:hover {
+    //     color: #fff;
+    //     background-color: #1B3C66;
+    //     font-weight: bold;
+    //     //border: #B36E29;
+    //     border-color: #FFF463;
+    //         border-width: 4px;
+    //         border-style: solid;
+        // }
+        hr {
+            height: 2px;
+            width: 90%;
+            background-color: #6EC6D2;
+          }
+          
