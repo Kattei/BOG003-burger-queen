@@ -70,11 +70,14 @@ export class ResumenCompraComponent implements OnInit {
         
 
       }
+
     }
-
-  );
-
-  }}
+    
+    );
+    
+  }
+   
+}
   
 
 

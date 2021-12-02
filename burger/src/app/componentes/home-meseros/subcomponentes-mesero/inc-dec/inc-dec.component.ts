@@ -42,7 +42,7 @@ export class IncDecComponent implements OnInit {
 
   }
   contador = (incremento: number) => {
-    if (this.Item !== undefined) {
+    if (this.Item !== undefined && ( this.Item.cantidad + incremento) > -1) {
       
       this.Item.cantidad += incremento
     

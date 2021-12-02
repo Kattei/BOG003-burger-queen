@@ -15,6 +15,7 @@ import { MenuAlmuerzoCenaComponent } from './componentes/home-meseros/subcompone
 import { ResumenCompraComponent } from './componentes/home-meseros/subcomponentes-mesero/resumen-compra/resumen-compra.component';
 import { IncDecComponent } from './componentes/home-meseros/subcomponentes-mesero/inc-dec/inc-dec.component';
 import { MultiplicarPrecioPipe } from './pipe/multiplicar-precio.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MultiplicarPrecioPipe } from './pipe/multiplicar-precio.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
