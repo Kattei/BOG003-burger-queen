@@ -42,7 +42,7 @@ incrementop:number = 1
 
   }
   contador = (incremento: number) => {
-    if (this.Item !== undefined) {
+    if (this.Item !== undefined && ( this.Item.cantidad + incremento) > -1) {
       
     this.Item.cantidad += incremento
     //   if (this.Item.cantidad<0){
