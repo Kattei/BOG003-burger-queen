@@ -6,12 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class MultiplicarPrecioPipe implements PipeTransform {
 
   transform(precio: number, cantidad:number): number {
-    //
-    let mutiplicacion = precio*cantidad;
-    //let acumuadorPrecio += mutiplicacion;
 
-    return mutiplicacion;
+    return precio * cantidad;
+
   }
-
-
+  
 }

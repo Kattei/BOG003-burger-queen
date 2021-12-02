@@ -22,26 +22,28 @@ export class ResumenCompraComponent implements OnInit {
     
   }
   ngOnInit(): void {
-    // this.showItem();
     this.pedidoSubcripcion = this.recibirInfo.itemListo$.subscribe((response) => {
-    
-      console.log('look', response);
-      if (this.pedido.length === 0) {
-        this.pedido.push(response);
-        this.sumaTotal=[];
-          this.pedido.forEach(element => {
-            this.sumaTotal.push(element.cantidad * element.precio);
-            const reducer = (accumulator: number, curr: number) => accumulator + curr;
-            console.log('sumatotal',this.sumaTotal)
-            this.total = this.sumaTotal.reduce(reducer);
-          
-          });
+      const totalProductos = () => {
 
-        //this.showItem()
+        this.sumaTotal = [];
+        this.pedido.forEach(element => {
+          this.sumaTotal.push(element.cantidad * element.precio);
+          const reducer = (accumulator: number, curr: number) => accumulator + curr;
+          console.log('sumatotal', this.sumaTotal)
+          this.total = this.sumaTotal.reduce(reducer);
+
+        });
+      }
+
+      console.log('look', response);
+      if (this.pedido.length === 0 ) {
+        this.pedido.push(response);
+            totalProductos()
+        
       } else {
         let concidencias = false;
         for (let i = 0; i < this.pedido.length; i++) {
-          if (this.pedido[i].nombre == response.nombre) {
+          if (this.pedido[i].nombre == response.nombre ) {
             this.pedido[i].cantidad = response.cantidad;
             concidencias = true;
             
@@ -49,36 +51,23 @@ export class ResumenCompraComponent implements OnInit {
             break
           }
         }
-        // this.pedido.forEach(element => {
-        // console.log('suma total', this.sumaTotal.reduce(reducer));
-
-        // });
 
         if (!concidencias) {
           this.pedido.push(response);
         }
 
+        this.pedido.forEach((element)=>{
+          if(element.cantidad === 0){
+            const posicionIndex =this.pedido.indexOf(element)
+            this.pedido.splice(posicionIndex, 1)
+          console.log("borrar",this.pedido) 
+          }
+        })
+
         
-        this.sumaTotal=[];
-          this.pedido.forEach(element => {
-            this.sumaTotal.push(element.cantidad * element.precio);
-            const reducer = (accumulator: number, curr: number) => accumulator + curr;
-            console.log('sumatotal',this.sumaTotal)
-            this.total = this.sumaTotal.reduce(reducer);
-          
-          });
+      totalProductos()
         
 
-        // this.pedido.forEach((elemento)=>{
-        //   if(elemento.nombre==response.nombre){
-        //     elemento.cantidad=response.cantidad;
-        //     console.log('condicionales',this.pedido);
-        //     break
-        //   }
-
-        // }) 
-
-        // console.log('pipe', new MultiplicarPrecioPipe())
       }
     }
 
@@ -87,17 +76,3 @@ export class ResumenCompraComponent implements OnInit {
   }}
   
 
-
-  // showItem = () =>{  
-    
-//   this.pedido.forEach(element => {
-//     // para seleccionar elementos que sean diferentes de cero
-//     const [nombre, precio, cantidad ]=this.pedido
-//     console.log('numero',cantidad);
-
-//     console.log('elementos', element)
-    
-//   });
-//   console.log("observando", this.pedido)
-//   }
-  
