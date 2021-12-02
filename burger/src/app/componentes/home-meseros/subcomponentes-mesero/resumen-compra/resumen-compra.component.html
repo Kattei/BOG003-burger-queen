@@ -6,13 +6,13 @@
     <hr>
     <p>Total</p>
   </div> -->
-  <section id="resumenCompra" class="container hideResumen showResumen">
+  <section id="resumenCompra" class="container">
     
     <div id="headerResumenCompra">
       <h2>Resumen de la compra</h2>
-      <img class="exit"src="\assets\cerrar.png" alt="boton cerrar resumen">
+      <img class="exit"src="\assets\cerrar.png" alt="boton cerrar resumen" (click)="eliminarPedido()" >
     </div>
-  <table>
+  <table [ngClass]="bottonCerrar ? 'ocultarResumen':'mostrarResumen'">
     <tr>
       <th>Items</th>
       <th>Precio</th>
@@ -32,7 +32,7 @@
     </tr>
     </table>
   <hr>
-  <table>
+  <table [ngClass]="bottonCerrar ? 'ocultarResumen':'mostrarResumen'">
     <tr >
       <th>Total</th>
       <td>${{total}}</td>

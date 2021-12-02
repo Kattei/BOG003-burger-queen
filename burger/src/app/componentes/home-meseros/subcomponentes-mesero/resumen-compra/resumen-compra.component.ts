@@ -17,10 +17,12 @@ export class ResumenCompraComponent implements OnInit {
   sumaTotal:number[]=[];
   total:number=0
   pedidoSubcripcion: Subscription =new Subscription();
+  bottonCerrar:boolean=false;
 
   constructor(private recibirInfo:GeneralService) { 
     
   }
+
   ngOnInit(): void {
     this.pedidoSubcripcion = this.recibirInfo.itemListo$.subscribe((response) => {
       this.eliminarItem
@@ -67,13 +69,20 @@ export class ResumenCompraComponent implements OnInit {
     );
     
   }
+  onChangeClass(){
+
+  }
+
   totalProductos = () => {
-    this.sumaTotal = [];
-    this.pedido.forEach(element => {
-      this.sumaTotal.push(element.cantidad * element.precio);
-      const reducer = (accumulator: number, curr: number) => accumulator + curr;
+    this.sumaTotal = [];//crea el array acumulador
+    this.pedido.forEach(element => { //se realiza este metodo para recorrer el array de pedido
+      this.sumaTotal.push(element.cantidad * element.precio);// se le asigna al el array vacio suma total los valores de la multipliacacion de cantidad con precio de cada elemento
+      const reducer = (accumulator: number, curr: number) => accumulator + curr;// funcion arrow para sumar el valor anterior con el valor actual
       console.log('sumatotal', this.sumaTotal)
-      this.total = this.sumaTotal.reduce(reducer);
+      this.total = this.sumaTotal.reduce(reducer); //metodo(callback) que recibe a la funcion reducer y restorna el valor del acumulador (number)
+      if(this.sumaTotal==[]){
+      this.total=0;}
+      console.log('sumatotal',this.total);
     });
   }
   
@@ -81,10 +90,16 @@ export class ResumenCompraComponent implements OnInit {
   eliminarItem=(e:Item)=>{
     let newArray = this.pedido.filter(element=>element.nombre !== e.nombre)
     this.pedido=newArray;
-    this.totalProductos()
+    this.totalProductos();
     console.log(this.pedido);
-  }  
+  } 
+  // eliminar todo el contenido de resumen compra 
+  
+  eliminarPedido=()=>{
+    this.bottonCerrar=!this.bottonCerrar;
+    this.pedido=[]    
+    this.totalProductos();
+  }
 }
 
-  
 
