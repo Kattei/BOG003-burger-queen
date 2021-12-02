@@ -23,26 +23,17 @@ export class ResumenCompraComponent implements OnInit {
   }
   ngOnInit(): void {
     this.pedidoSubcripcion = this.recibirInfo.itemListo$.subscribe((response) => {
-      const totalProductos = () => {
-
-        this.sumaTotal = [];
-        this.pedido.forEach(element => {
-          this.sumaTotal.push(element.cantidad * element.precio);
-          const reducer = (accumulator: number, curr: number) => accumulator + curr;
-          console.log('sumatotal', this.sumaTotal)
-          this.total = this.sumaTotal.reduce(reducer);
-
-        });
-      }
-
+      this.eliminarItem
+      
+      
       console.log('look', response);
       if (this.pedido.length === 0 ) {
         this.pedido.push(response);
-            totalProductos()
-        
-      } else {
-        let concidencias = false;
-        for (let i = 0; i < this.pedido.length; i++) {
+            this.totalProductos()
+            
+          } else {
+            let concidencias = false;
+            for (let i = 0; i < this.pedido.length; i++) {
           if (this.pedido[i].nombre == response.nombre ) {
             this.pedido[i].cantidad = response.cantidad;
             concidencias = true;
@@ -51,7 +42,7 @@ export class ResumenCompraComponent implements OnInit {
             break
           }
         }
-
+        
         if (!concidencias) {
           this.pedido.push(response);
         }
@@ -60,19 +51,40 @@ export class ResumenCompraComponent implements OnInit {
           if(element.cantidad === 0){
             const posicionIndex =this.pedido.indexOf(element)
             this.pedido.splice(posicionIndex, 1)
-          console.log("borrar",this.pedido) 
+            console.log("borrar",this.pedido) 
           }
         })
-
         
-      totalProductos()
         
-
+        this.totalProductos();
+        
+        
       }
     }
+    
+    
+    
+    );
+    
+  }
+  totalProductos = () => {
+    this.sumaTotal = [];
+    this.pedido.forEach(element => {
+      this.sumaTotal.push(element.cantidad * element.precio);
+      const reducer = (accumulator: number, curr: number) => accumulator + curr;
+      console.log('sumatotal', this.sumaTotal)
+      this.total = this.sumaTotal.reduce(reducer);
+    });
+  }
+  
+  // funcion eliminar todo un item de compra
+  eliminarItem=(e:Item)=>{
+    let newArray = this.pedido.filter(element=>element.nombre !== e.nombre)
+    this.pedido=newArray;
+    this.totalProductos()
+    console.log(this.pedido);
+  }  
+}
 
-  );
-
-  }}
   
 
