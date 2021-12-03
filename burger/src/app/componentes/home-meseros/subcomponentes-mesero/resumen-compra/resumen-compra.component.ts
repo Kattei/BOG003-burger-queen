@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Item } from 'src/app/clases/item';
-import { MultiplicarPrecioPipe } from 'src/app/pipe/multiplicar-precio.pipe';
-//import { ItemOrder } from 'src/app/clases/itemOrder';
 import { GeneralService } from '../../../../servicios/general.service';
 
 
