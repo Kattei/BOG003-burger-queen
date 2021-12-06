@@ -1,9 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { Item } from 'src/app/clases/item';
 import { MultiplicarPrecioPipe } from 'src/app/pipe/multiplicar-precio.pipe';
 //import { ItemOrder } from 'src/app/clases/itemOrder';
 import { GeneralService } from '../../../../servicios/general.service';
+import { MenuDesayunoComponent } from '../menu-desayuno/menu-desayuno.component';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -19,7 +22,7 @@ export class ResumenCompraComponent implements OnInit {
   pedidoSubcripcion: Subscription =new Subscription();
   bottonCerrar:boolean=false;
 
-  constructor(private recibirInfo:GeneralService) { 
+  constructor(private recibirInfo:GeneralService, private matDialog: MatDialog) { 
     
   }
 
@@ -98,8 +101,13 @@ export class ResumenCompraComponent implements OnInit {
   eliminarPedido=()=>{
     this.bottonCerrar=!this.bottonCerrar;
     this.pedido=[]    
-    this.totalProductos();
+    this.total
   }
+  modalResumenCompra(){
+    this.matDialog.open(ModalComponent, {data:this.pedido});
+    console.log("ver Modal");
+  }
+
 }
 
-
+ 

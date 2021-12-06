@@ -16,7 +16,12 @@ import { ResumenCompraComponent } from './componentes/home-meseros/subcomponente
 import { IncDecComponent } from './componentes/home-meseros/subcomponentes-mesero/inc-dec/inc-dec.component';
 import { MultiplicarPrecioPipe } from './pipe/multiplicar-precio.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { MatDialogModule, MatButtonModule } from '@angular/material';
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatSliderModule } from '@angular/material/slider';
 
+import { from } from 'rxjs';
+import { ModalComponent } from './componentes/home-meseros/subcomponentes-mesero/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +37,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MenuAlmuerzoCenaComponent,
     ResumenCompraComponent,
     IncDecComponent,
-    MultiplicarPrecioPipe
+    MultiplicarPrecioPipe,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    // MatButtonModule
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
