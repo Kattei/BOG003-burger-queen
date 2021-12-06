@@ -108,6 +108,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "burger:build:production",
+            "firebaseProject": "cangre-burger-c91a9",
+            "firebaseHostingSite": "cangre-burger-c91a9"
+          }
         }
       }
     }

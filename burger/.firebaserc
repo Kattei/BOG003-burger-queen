@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cangre-burger-c91a9": {
+      "hosting": {
+        "burger": [
+          "cangre-burger-c91a9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cangre-burger-c91a9"
+  }
+}

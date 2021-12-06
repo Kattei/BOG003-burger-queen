@@ -9,7 +9,7 @@
     <li *ngFor="let item of almuerzoYcena">
         
         <app-inc-dec [Item]="item"></app-inc-dec>
-        <p *ngFor= "let carne of item.carnes" >
+        <!-- <p *ngFor= "let carne of item.carnes" >
             {{carne.item}}
         </p>
 
@@ -17,7 +17,7 @@
             {{adicional.item}}
             {{adicional.precio}}
             {{adicional.cantidad}}
-        </p>
+        </p> -->
     </li>
 </ul>
 <app-resumen-compra></app-resumen-compra>

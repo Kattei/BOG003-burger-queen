@@ -21,7 +21,14 @@ import { MatDialogModule} from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 
 import { from } from 'rxjs';
-import { ModalComponent } from './componentes/home-meseros/subcomponentes-mesero/modal/modal.component';
+import { ModalComponent } from './componentes/home-meseros/subcomponentes-mesero/ventanas-modales/modal/modal.component';
+import { ModalAlmuerzoComponent } from './componentes/home-meseros/subcomponentes-mesero/ventanas-modales/modal-almuerzo/modal-almuerzo.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +46,7 @@ import { ModalComponent } from './componentes/home-meseros/subcomponentes-mesero
     IncDecComponent,
     MultiplicarPrecioPipe,
     ModalComponent,
+    ModalAlmuerzoComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +54,11 @@ import { ModalComponent } from './componentes/home-meseros/subcomponentes-mesero
     BrowserAnimationsModule,
     MatDialogModule,
     // MatButtonModule
-    MatSliderModule
+    MatSliderModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

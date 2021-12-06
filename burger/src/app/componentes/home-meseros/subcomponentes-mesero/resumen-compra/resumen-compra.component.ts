@@ -6,7 +6,7 @@ import { MultiplicarPrecioPipe } from 'src/app/pipe/multiplicar-precio.pipe';
 //import { ItemOrder } from 'src/app/clases/itemOrder';
 import { GeneralService } from '../../../../servicios/general.service';
 import { MenuDesayunoComponent } from '../menu-desayuno/menu-desayuno.component';
-import { ModalComponent } from '../modal/modal.component';
+import { ModalComponent } from '../ventanas-modales/modal/modal.component';
 
 
 @Component({

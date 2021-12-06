@@ -1,0 +1,21 @@
+<p>modal-almuerzo works!</p>
+
+<h2>Menú Almuerzo y Cena</h2>
+
+<ul>
+    <li *ngFor="let item of modalContenAlmuerzo">
+        
+        <app-inc-dec [Item]="item"></app-inc-dec>
+        <p *ngFor= "let carne of item.carnes" >
+            {{carne.item}}
+        </p>
+
+        <p *ngFor="let adicional of item.adicionales">
+            {{adicional.item}}
+            {{adicional.precio}}
+            {{adicional.cantidad}}
+        </p>
+    </li>
+</ul>
+<app-resumen-compra></app-resumen-compra>
+
