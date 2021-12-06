@@ -1,0 +1,28 @@
+<!-- <p>modal works!</p>
+<p>{{modalConten}}</p> -->
+<div id="headerResumenCompra">
+
+    <h2>Pedido enviado con Exito</h2>
+    <h3>Resumen de la compra</h3>
+    <img class="exit"src="\assets\cerrar.png" alt="boton cerrar resumen">
+  </div>
+<table>
+  <tr>
+    <th>Items</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+  </tr>
+  
+  <tr  *ngFor="let itemPedido of modalConten" >
+    
+    <td>{{itemPedido.nombre}}</td>
+    <td>${{itemPedido.precio | multiplicarPrecio: itemPedido.cantidad}}</td>
+    <td>{{itemPedido.cantidad}}</td>
+    <td>
+    </tr>
+ </table>
+ <!-- <div>
+  
+    <button  class="boton-preparar" (click)= "modalResumenCompra()">Enviar a Cocina</button>
+  </div> -->
+<!-- <app-resumen-compra ></app-resumen-compra> -->

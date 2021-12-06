@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { Item } from 'src/app/clases/item';
 import { GeneralService } from '../../../../servicios/general.service';
+import { MenuDesayunoComponent } from '../menu-desayuno/menu-desayuno.component';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -15,9 +18,9 @@ export class ResumenCompraComponent implements OnInit {
   sumaTotal:number[]=[];
   total:number=0
   pedidoSubcripcion: Subscription =new Subscription();
-  bottonCerrar:boolean=false;
+  // bottonCerrar:boolean=false;
 
-  constructor(private recibirInfo:GeneralService) { 
+  constructor(private recibirInfo:GeneralService, private matDialog: MatDialog) { 
     
   }
 
@@ -98,15 +101,20 @@ export class ResumenCompraComponent implements OnInit {
     let newArray = this.pedido.filter(element=>element.nombre !== e.nombre)
     this.pedido=newArray;
     this.totalProductos();
+    this.total
     console.log(this.pedido);
   } 
   // eliminar todo el contenido de resumen compra 
   
   eliminarPedido=()=>{
-    this.bottonCerrar=!this.bottonCerrar;
+    // this.bottonCerrar=!this.bottonCerrar;
     this.pedido=[]    
-    this.totalProductos();
+    this.total
   }
-}
+  modalResumenCompra(){
+    this.matDialog.open(ModalComponent, {data:this.pedido});
+    console.log("ver Modal");
+  }
 
+}
 
