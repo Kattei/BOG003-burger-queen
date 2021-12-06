@@ -75,9 +75,15 @@ section{
     //         border-width: 4px;
     //         border-style: solid;
         // }
-        hr {
-            height: 2px;
-            width: 90%;
-            background-color: #6EC6D2;
-          }
-          
+hr {
+    height: 2px;
+    width: 90%;
+    background-color: #6EC6D2;
+    }
+        
+.ocultarResumen{
+    display: none;
+}
+.mostrarResumen{
+    display: block;
+}

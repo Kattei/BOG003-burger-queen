@@ -16,7 +16,7 @@ import { GeneralService } from 'src/app/servicios/general.service';
   styleUrls: ['./inc-dec.component.scss']
 })
 export class IncDecComponent implements OnInit {
-//incremento:number = 1
+incrementop:number = 1
 //number:number=0
 
 //@Input()  Item: Item | undefined = new Observable<Item>()
@@ -44,7 +44,15 @@ export class IncDecComponent implements OnInit {
   contador = (incremento: number) => {
     if (this.Item !== undefined && ( this.Item.cantidad + incremento) > -1) {
       
-      this.Item.cantidad += incremento
+    this.Item.cantidad += incremento
+    //   if (this.Item.cantidad<0){
+    //     incremento=0;
+    //   }else if (this.Item.cantidad>1){
+    //   this.Item.cantidad =- this.incrementop;
+    // }
+    //   else{
+    //     this.Item.cantidad+=this.incrementop;
+    //   }
     
       
     }
